@@ -53,13 +53,10 @@ func root(res http.ResponseWriter, req *http.Request) {
 		`
 		<html>
 			<style>
-				.container { height: 100vh; display: flex; justify-content: center; align-items: center }
 				h1 { color: teal; text-align: center; }
 			</style>
 			<body>
-				<div class="container">
-					<h1>PIZZA is your superpower!"
-				</div>
+				<h1>PIZZA is your superpower!"
 			</body>
 		</html>
 		`,
