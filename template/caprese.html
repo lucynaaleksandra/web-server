@@ -1,0 +1,36 @@
+<html>
+<style>
+  h1 {
+    color: saddlebrown;
+  }
+
+  h2 {
+    color: grey;
+  }
+
+  h3 {
+    color: salmon;
+    margin: 0;
+  }
+
+  h3:last-of-type {
+    padding-bottom: 1rem;
+  }
+
+  img {
+    width: 250px;
+    height: 150px;
+  }
+</style>
+
+<body>
+  <h2>Today's special:
+    <h1>CAPRESE pizza</h1>
+  </h2>
+  <h3>Caprese pizza ingredients: {{ .Ingredients }}</h3>
+  <h3>Crust: {{ .Crust }}</h3>
+  <img src="../assets/caprese-pizza.jpg"
+    alt="caprese pizza" />
+</body>
+
+</html>

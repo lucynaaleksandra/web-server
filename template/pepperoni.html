@@ -1,0 +1,26 @@
+<html>
+<style>
+  h1 {
+    color: brown;
+  }
+
+  h3 {
+    color: lightcoral;
+    margin: 0;
+  }
+
+  img {
+    width: 250px;
+    height: 150px;
+  }
+</style>
+
+<body>
+  <h1>PEPPERONI pizza</h1>
+  <h3>Pepperoni pizza ingredients: {{ .Ingredients }}</h3>
+  <h3>Crust: {{ .Crust }}</h3>
+  <img src="../assets/pepperoni.jpg"
+    alt="pepperoni pizza">
+</body>
+
+</html>
