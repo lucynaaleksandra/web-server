@@ -1,5 +1,13 @@
 <html>
 <style>
+  .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
   h1 {
     color: brown;
   }
@@ -9,6 +17,10 @@
     margin: 0;
   }
 
+  h3:last-of-type {
+    padding-bottom: 1rem;
+  }
+
   img {
     width: 250px;
     height: 150px;
@@ -16,11 +28,13 @@
 </style>
 
 <body>
-  <h1>PEPPERONI pizza</h1>
-  <h3>Pepperoni pizza ingredients: {{ .Ingredients }}</h3>
-  <h3>Crust: {{ .Crust }}</h3>
-  <img src="../assets/pepperoni.jpg"
-    alt="pepperoni pizza">
+  <div class="container">
+    <h1>PEPPERONI pizza</h1>
+    <h3>Pepperoni pizza ingredients: {{ .Ingredients }}</h3>
+    <h3>Crust: {{ .Crust }}</h3>
+    <img src="../assets/pepperoni.jpg"
+      alt="pepperoni pizza">
+  </div>
 </body>
 
 </html>

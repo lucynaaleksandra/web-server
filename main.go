@@ -14,6 +14,7 @@ type pizza struct {
 func main() {
 	capreseTempl := template.Must(template.ParseFiles("template/caprese.html"))
 	pepperoniTempl := template.Must(template.ParseFiles("template/pepperoni.html"))
+	italianTempl := template.Must(template.ParseFiles("template/italian.html"))
 
 	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("./assets"))))
 
@@ -35,6 +36,14 @@ func main() {
 		pepperoniTempl.Execute(res, pepperoniPizza)
 	}))
 
+	http.Handle("/italian", http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
+		italianPizza := pizza{
+			Ingredients: "sausage, pepper, olives, feta",
+			Crust:       "thick",
+		}
+		italianTempl.Execute(res, italianPizza)
+	}))
+
 	log.Println("Starting server...")
 	http.ListenAndServe(":8080", nil)
 }
@@ -44,10 +53,13 @@ func root(res http.ResponseWriter, req *http.Request) {
 		`
 		<html>
 			<style>
-				h1 { color: teal; }
+				.container { height: 100vh; display: flex; justify-content: center; align-items: center }
+				h1 { color: teal; text-align: center; }
 			</style>
 			<body>
-				<h1>I am the root of all pizzas!"
+				<div class="container">
+					<h1>PIZZA is your superpower!"
+				</div>
 			</body>
 		</html>
 		`,
